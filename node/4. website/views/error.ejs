@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title><%=message%></title>
+    <link rel="stylesheet" href="/css/error.css" />
+    <%-include('layout/partials/style')%>
+  </head>
+  <%-include('layout/partials/navigation')%>
+  <div id="main">
+    <div class="fof">
+      <h1>Error <%=status%>. <%=message%></h1>
+    </div>
+  </div>
+</html>

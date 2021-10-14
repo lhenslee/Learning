@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+
+<div class="container">
+    <br>
+    <div class="jumbotron">
+        <h1 class="display-4">Send Message</h1>
+        <br>
+        <input id="name" class="form-control" placeholder="Name">
+        <br>
+        <textarea id="message" class="form-control" placeholder="Message"></textarea>
+        <br>
+        <button id="send" class="btn btn-success">Send</button>
+    </div>
+    <br>
+    <div id="messages">
+
+    </div>
+</div>
+<script>
+    var socket = io()
+    $(() => {
+        $('#send').click(() => {
+            var message = {name: $("#name").val(), message: $("#message").val()}
+            postMessage(message)
+        })
+        getMessages()
+    })
+
+    socket.on('message', addMessage)
+
+    function addMessage(message) {
+        $("#messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+    }
+
+    function addMessages(data) {
+        data.forEach(addMessage);
+    }
+
+    function getMessages() {
+        $.get('http://localhost:3000/messages', (data) => {
+            addMessages(data)
+        })
+    }
+
+    function postMessage(message) {
+        $.post('http://localhost:3000/messages', message)
+    }
+</script>

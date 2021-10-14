@@ -1,0 +1,18 @@
+id	title	focus	country	region	season	days	nights	capacity	elevation delta	length	maximum elevation	meals	rating	press quote	quote source	photo file name
+1141	Australian Rock and Water	Climbing / Hiking	Australia	Australia	Spring/Summer	17	16	13	12105	15	7500	Included	7			Australian Rock and Water.jpg
+1142	Joshua Tree Climbing Workshop 	Climbing / Bouldering	United States	North America	Winter	nine	ten	9	1831	11	1000	Included	6	"Great trip, but where was Bono?"	Rolling Stones	Joshua Tree Climbing Workshop .jpg
+1143	"Railai, Ao Nang and Beyond"	Climbing	Thailand	Asia	Summer	17	16	8	7024	10	5500	Included	7			"Railai, Ao Nang and Beyond.jpg"
+1144	Peruvian Challenge	Climbing	Peru	South America	Fall	14	13	7	18346	21	14750	Included	8	"Say it with me: ""TravelRocks Rocks!"""	Hiking Times	Peruvian Challenge.jpg
+1145	Sierra Climbing Challenge	Climbing	United States	North America	Summer	12	11	10	22440	28	14500	Lunch/Dinner	7			Sierra Climbing Challenge.jpg
+1146	"Malta, Gozo and Comino"	Climbing	Maltese islands	Mediterranean	Fall	11	10	11	3655	8	2500	Included	8	"Great googli-moogli! How did we ever miss this one? Sun, rock, waves. The trip of a lifetime. Some great technical climbs on day three and excellent bouldering on day five."	Wild Rock Magazine	"Malta, Gozo and Comino.jpg"
+1147	Climb India	Climbing	India	Asia	Fall/Winter	15	14	12	9890	18	6500	Included	9	"Sure this was supposed to be an extreme adventure, and one heck of a climb, but the food. Oh my! We'd  make the climb again just to have dinner one more time!
+
+Go for the climb, stay for the food!
+"	Extreme Adventure	Climb India.jpg
+1148	Argentina Ascent	Climbing	Argentina	South America	Fall	12	11	14	10897	20	6750	Variable	7	"Just go! Perfect planing and execution - no hassles at all. The guides were terrific, the food fantastic, and the sights out of this world.
+
+Bring a camera! Bring two!"	Backpacker	Argentina Ascent.jpg
+1149	Discover Croatia	Climbing	Croatia	Europe	All	11	10	8	6709	15	3750	Included	7	"Who knew? Americans hear ""Croatia"" and think war and UN troops. Not so! The views are spectacular. Your only trouble will be managing to carry enough memory cards for all the pictures."	Outdoor	Discover Croatia.jpg
+1150	Yosemite Technical	Climbing	United States	North America	Spring	14	15	9	11964	14	8842	Lunch/Dinner	10	"This is it. The climbing challenge we've all been looking for...
+
+You'll need to remember every bit of your training and all the endurance you can muster but it will be worth every minute of each climb. Amazing."	Climber!	Yosemite Technical.jpg

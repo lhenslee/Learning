@@ -1,0 +1,8 @@
+﻿Timestamp	Filename	Error	Message
+2021-10-14 11:15:00.743 -0700	Untitled.fmp12	0	Import operations started
+2021-10-14 11:15:04.916 -0700	Untitled.fmp12	0	Import of tables from file “Products_03_02.fmp12” started
+2021-10-14 11:15:04.934 -0700	Products	0	fields imported : 27
+2021-10-14 11:15:04.935 -0700	Untitled.fmp12	0	tables imported : 1
+2021-10-14 11:15:04.936 -0700	Untitled.fmp12	0	Import completed
+2021-10-14 11:15:45.205 -0700	Untitled.fmp12	0	Import operations committed
+2021-10-14 11:15:45.207 -0700	Untitled.fmp12	0	==================================================================

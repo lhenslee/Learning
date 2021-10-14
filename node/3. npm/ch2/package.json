@@ -1,0 +1,22 @@
+{
+  "name": "huncho",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js --exec babel-node -e js",
+    "nodemonthis": "nodemon ./index.js --exec babel-node -e js",
+    "createang": "npx -p @angular/cli ng new myapp",
+    "cowhi": "npx cowsay \"Me llamo Huncho!\""
+  },
+  "author": "huncho",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
