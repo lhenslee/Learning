@@ -40,6 +40,7 @@ class MongoBackend {
         value,
       });
     });
+    return this.collection.insertMany(documents);
   }
 
   async getMax() {}
