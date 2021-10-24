@@ -31,7 +31,16 @@ class MongoBackend {
     return false;
   }
 
-  async insert() {}
+  async insert() {
+    const data = await this.coinAPI.fetch();
+    const documents = [];
+    Object.entries(data.bpi).forEach((key, value) => {
+      documents.push({
+        data: key,
+        value,
+      });
+    });
+  }
 
   async getMax() {}
 
