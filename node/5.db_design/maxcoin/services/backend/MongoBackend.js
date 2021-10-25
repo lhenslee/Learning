@@ -34,16 +34,18 @@ class MongoBackend {
   async insert() {
     const data = await this.coinAPI.fetch();
     const documents = [];
-    Object.entries(data.bpi).forEach((key, value) => {
+    Object.entries(data.bpi).forEach((result) => {
       documents.push({
-        data: key,
-        value,
+        date: result[0],
+        value: result[1],
       });
     });
     return this.collection.insertMany(documents);
   }
 
-  async getMax() {}
+  async getMax() {
+    return this.collection.findOne({}, { sort: { value: -1 } });
+  }
 
   async max() {
     console.info("Connection to MongoDB");
@@ -56,11 +58,29 @@ class MongoBackend {
     console.log("MongoDB connection succuss.");
     console.timeEnd("mongodb-connect");
 
+    console.info("\nInserting into MongoDB");
+    console.time("mongodb-insert");
+    const inserResult = await this.insert();
+    console.timeEnd("mongodb-insert");
+    console.info(`${inserResult.insertedCount} documents were inserted.`);
+
+    // Find max
+    console.info("\nQuerying mongoDB");
+    console.time("mongodb-find");
+    const doc = await this.getMax();
+    console.timeEnd("mongodb-find");
+
     // Disconnect from the database and time it
-    console.info("Disconnection to MongoDB");
+    console.info("\nDisconnection to MongoDB");
     console.time("mongodb-disconnect");
     await this.disconnect();
     console.timeEnd("mongodb-disconnect");
+    console.log("");
+
+    return {
+      date: doc.date,
+      value: doc.value,
+    };
   }
 }
 
