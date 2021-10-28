@@ -67,7 +67,7 @@ class MongoBackend {
     // Find max
     console.info("\nQuerying mongoDB");
     console.time("mongodb-find");
-    const doc = await this.getMax();
+    const max = await this.getMax();
     console.timeEnd("mongodb-find");
 
     // Disconnect from the database and time it
@@ -75,11 +75,10 @@ class MongoBackend {
     console.time("mongodb-disconnect");
     await this.disconnect();
     console.timeEnd("mongodb-disconnect");
-    console.log("");
 
     return {
-      date: doc.date,
-      value: doc.value,
+      date: max.date,
+      value: max.value,
     };
   }
 }
