@@ -1,7 +1,10 @@
 const express = require("express");
 const path = require("path");
 const session = require("express-session");
+const RedisStore = require("connect-redis")(session);
 const routeHandler = require("./routes");
+const UserService = require("./services/UserService");
+const BasketService = require("./services/BasketService");
 
 module.exports = (config) => {
   const app = express();
@@ -16,6 +19,7 @@ module.exports = (config) => {
   app.set("trust proxy", 1); // trust first proxy
   app.use(
     session({
+      store: new RedisStore({ client: config.redis.client }),
       secret: "very secret secret to encyrpt session",
       resave: false,
       saveUninitialized: false,
@@ -40,6 +44,27 @@ module.exports = (config) => {
       req.session.messages = [];
     }
     res.locals.messages = req.session.messages;
+
+    if (req.session.userId) {
+      try {
+        res.locals.currentUser = await UserService.getOne(req.session.userId);
+        const basket = new BasketService(
+          config.redis.client,
+          req.session.userId
+        );
+        let basketCount = 0;
+        const basketContents = await basket.getAll();
+        if (basketContents) {
+          Object.keys(basketContents).forEach((itemId) => {
+            basketCount += parseInt(basketContents[itemId], 10);
+          });
+          res.locals.basketCount = basketCount;
+        }
+      } catch (error) {
+        return next(error);
+      }
+    }
+
     return next();
   });
 
